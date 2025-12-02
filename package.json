@@ -1,0 +1,75 @@
+{
+  "name": "openocean-mcp",
+  "version": "0.0.4",
+  "description": "Mcp server for Openocean access",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "openocean-mcp": "dist/index.js"
+  },
+  "mcp": {
+    "entry": "./dist/index.js",
+    "transport": "stdio"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/index.js",
+    "prepare": "husky",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js",
+    "publish-packages": "pnpm run build && changeset publish",
+    "format": "biome format . --write",
+    "lint": "biome check ."
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@10.7.1",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./tool-selector": {
+      "import": "./dist/tool-selector.js",
+      "require": "./dist/tool-selector.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openocean-finance/openocean-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "Openocean",
+    "openocean agents"
+  ],
+  "author": "OPENOCEAN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/openocean-finance/openocean-mcp/issues"
+  },
+  "homepage": "https://github.com/openocean-finance/openocean-mcp#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.22.0",
+    "dedent": "^1.6.0",
+    "express": "^5.1.0",
+    "fastmcp": "^3.23.1",
+    "shx": "^0.3.4",
+    "viem": "^2.30.0",
+    "zod": "^3.25.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "*",
+    "@changesets/cli": "^2.29.4",
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.19",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.0.0",
+    "shx": "^0.3.4",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
