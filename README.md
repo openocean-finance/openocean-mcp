@@ -1,8 +1,12 @@
-# OPENOCEAN-MCP: Model Context Protocol Server for Decentralized Exchanges
+# OPENOCEAN-MCP Server
 
-This project implements a Model Context Protocol (MCP) server to interact with decentralized exchanges (DEXs). It allows MCP-compatible clients (like AI assistants, IDE extensions, or custom applications) to access functionalities such as getting quotes for swaps and executing swaps.
+An MCP server for executing token swaps across multiple decentralized exchanges using OpenOcean's aggregation API.
 
-This server is built using TypeScript and `fastmcp`.
+## Overview
+
+This project implements a Model Context Protocol (MCP) server to interact with decentralized exchanges (DEXs). It allows MCP-compatible clients (like AI assistants, IDE extensions, or custom applications) to access functionalities such as getting quotes for swaps and executing swaps across multiple chains.
+
+This server is built using TypeScript and fastmcp.
 
 ## Features (MCP Tools)
 
